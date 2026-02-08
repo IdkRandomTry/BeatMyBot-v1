@@ -1,0 +1,5 @@
+# Add Python dependencies here if needed
+# Example:
+# numpy==1.26.0
+# scipy==1.11.0
+# requests==2.31.0

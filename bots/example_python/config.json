@@ -1,0 +1,7 @@
+{
+  "command": ["python", "-u", "bot.py"],
+  "name": "Simple Python Bot",
+  "docker_image": "my-bot-image",
+  "docker_cpus": 0.5,
+  "docker_memory": "256m"
+}

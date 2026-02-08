@@ -1,0 +1,42 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+snakegame
+snakegame.exe
+
+# Test binary
+*.test
+
+# Output of go coverage tool
+*.out
+
+# Match replays (optional - uncomment if you don't want to track replays)
+# replays/match_replay.json
+# replay_*.json
+
+# Go workspace file
+go.work
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Bot specific
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/node_modules/
+**/*.class
+**/.gradle/
+**/build/
+**/target/

@@ -1,0 +1,4 @@
+{
+  "command": ["python", "-u", "random_bot.py"],
+  "name": "Random Bot"
+}
