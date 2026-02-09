@@ -26,6 +26,19 @@ Your bot is your player with perfect information about the board but no control 
 engine is the impartial referee that enforces all rules and keeps the game fair. And you are the
 COACH! You must teach your bot the best strategy to WIN!
 
+You can participate **individually** or in a **team of maximum 2 members**. Each team submits one bot. Register your team [here](https://docs.google.com/forms/d/e/1FAIpQLScZGOzJTZ9eWz8sNgBig5ds-bvxkmKpEabHolpawLsYydMARg/viewform?usp=dialog).
+
+## Timeline
+
+- **09/02** - Start of Competition. The codebase and gamerules will be shared. There will be an orientation at night.
+- **11/02** - Sprint 1 submission! You can submit your code to us for testing against other bots. You will get back the replay files of your battles against other submissions by the next day. This will help you understand the meta of the game and you can try to deduce what others are developing.
+- **13/02** - Sprint 2 submission!
+- **15/02 (10 AM)** - Sprint 3 submission!
+- **15/02 (6 PM)** - Final submissions. Note: We require you to have submitted your bot to atleast one of the Sprints to count your final submission.
+- **15/02 (10 PM)** - We will gather to watch how the tournament plays out!
+
+---
+
 So now that you understand the what the competition is about lets is dive into the game rules
 
 ## Game Rules - 2 Player Snake
@@ -162,7 +175,7 @@ Valid moves: `"UP"`, `"DOWN"`, `"LEFT"`, `"RIGHT"`
 
 To participate in the competition, follow these steps:
 
-1. **Fork** this repository to your GitHub account
+1. **Clone** this repository to your local machine
 2. Inside the `bots/` folder, **make a copy** of `example_python/` and rename it to `your_team_name/`
 3. **Update** the `name` field in `config.json` to your team name
 4. **Implement** your bot strategy by modifying `bot.py` (Python 3.12)
@@ -172,7 +185,7 @@ To participate in the competition, follow these steps:
    - Linux/Mac: `./scripts/create_dockerfile.sh ./bots/your_team_name`
 7. **Update** `config.json` with Docker settings (add `docker_image`, `docker_cpus`, `docker_memory` fields)
 8. **Test** your bot locally using the test scripts
-9. **Submit** by creating a **Pull Request (PR)** to the main repository with your bot folder
+9. **Submit** by compressing your team folder into a `.zip` file and submitting it through the **Google Form**
 
 This approach gives you a working template to start from, so you can focus on strategy rather than setup! For details regarding setup, check out the apendix.
 
@@ -226,7 +239,7 @@ except Exception as e:
 ### Testing
 
 Before testing, ensure you have set up Docker for your bot. If you have Docker installed, run:
-Windows: `.\scripts\create_dockerfile.ps1 -BotDir .\.bots\your_bot_name`
+Windows: `.\scripts\create_dockerfile.ps1 -BotDir .\bots\your_bot_name`
 Linux/Mac: `./scripts/create_dockerfile.sh ./bots/your_bot_name`
 
 Use the provided test scripts to run matches locally:
@@ -281,27 +294,26 @@ Continue this cycle: v2 → v3 → v4, always testing new versions against your 
 
 ## Sssssubmission Format
 
-Submit your bot via **Pull Request (PR)** to the main repository:
+Submit your bot via **Google Form**:
 
-1. **Fork** the repository to your GitHub account
-2. Create a folder named `bots/team_name/` in your fork containing:
+1. Create a folder named `team_name/` containing:
    - `config.json` - Bot configuration with Docker settings
    - `bot.py` - Your bot implementation (Python 3.12 only)
    - `Dockerfile` - Generated via create_dockerfile script
    - `requirements.txt` - Python dependencies
    - (Optional) `README.md` - Strategy explanation
-3. **Create a Pull Request** from your fork to the main repository. Only your team folder must be modified.
+2. **Compress** your team folder into a `.zip` file (e.g., `team_digis.zip`)
+3. **Submit** the zip file through the Google Form link provided by the organizers
 
 Example structure:
 
 ```
-bots/
-  team_digis/
-    config.json
-    bot.py
-    Dockerfile
-    requirements.txt
-    README.md
+team_digis.zip
+  ├── config.json
+  ├── bot.py
+  ├── Dockerfile
+  ├── requirements.txt
+  └── README.md (optional)
 ```
 
 ---
@@ -309,8 +321,9 @@ bots/
 **Good luck, and may your snake survive the longest!** 🐍
 
 ---
+The Specs are subject to change . Our decision will be the final decision in case of any dispute.
 
-We have developed the backend for the first time. Some bugs are bound to be missed. If you find any please report to Siddhesh (7447454514; siddhesh.umarjee@iitgn.ac.in) or anyone from Digis.
+We have developed the backend for the first time. Some bugs are bound to be missed. If you find any please report to Siddhesh (7447454514; siddhesh.umarjee@iitgn.ac.in) or anyone from Digis. 
 
 ## Appendix
 
