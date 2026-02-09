@@ -1,3 +1,7 @@
+❗Rule Update: Size limit of 10 MB for submission. [Updated on 09.02.26 14:54]
+
+✅Bug fix: `test_match.bat` handles default values correctly now. [Updated on 09.02.26 14:54]
+
 # Beat my Bot v1 - Game Ssspecifications
 
 Welcome to the first ever **Beat my Bot** challenge.
@@ -62,7 +66,7 @@ Your snake can move in four **directions**: UP, DOWN, LEFT, or RIGHT. However, *
 
 #### Energy Sssystem
 
-Snake must to maintain its energy level above 0. It begins with a starting energy of 60. Every turn, your snake experiences **energy depletion** at of 1 point per turn. The good news is that eating **any** apple restores your energy back to 60, regardless of the apple type. However, be warned: if your energy reaches 0 your snake will die from hunger and lose.
+Snake must maintain its energy level above 0. It begins with a starting energy of 60. Every turn, your snake experiences **energy depletion** at of 1 point per turn. The good news is that eating **any** apple restores your energy back to 60, regardless of the apple type. However, be warned: if your energy reaches 0 your snake will die from hunger and lose.
 
 #### Death
 
@@ -89,9 +93,20 @@ Apples spawn on empty cells. You may get special apples which grant various effe
 
 ### Apple Sssspawning
 
-We uses a **zone-based spawning system** to ensure fair apple distribution. The grid is dynamically divided into three zones based on Manhattan distance from each snake's head: positions closer to your snake, positions closer to your opponent's snake, and neutral positions (within 3 tiles of being equidistant). When a new apple needs to spawn, the engine counts how many apples currently exist in each zone and spawns the new apple in the zone with the **fewest apples**. This reduces luck-based advantages. The zones shift dynamically as snakes move around the board, continuously adapting to maintain balance. Think about ways to use this to your advantage! NOTE: Apples will never spawn on snake bodies, map obstacles, or existing apples - only on empty cells.
+We use a **zone-based spawning system** to ensure fair apple distribution. The grid is dynamically divided into three zones based on Manhattan distance from each snake's head: positions closer to your snake, positions closer to your opponent's snake, and neutral positions (within 3 tiles of being equidistant). When a new apple needs to spawn, the engine counts how many apples currently exist in each zone and spawns the new apple in the zone with the *fewest apples* on a *random* empty location. This reduces luck-based advantages. The zones shift dynamically as snakes move around the board, continuously adapting to maintain balance. Think about ways to use this to your advantage! NOTE: Apples will never spawn on snake bodies, map obstacles, or existing apples - only on empty cells.
 
 ## About your Bot
+
+### Prerequisites
+
+Before creating your bot, make sure you have:
+
+- **Python 3.12** installed on your machine
+- **Docker Desktop** installed (see Docker Setup in Appendix)
+- **Go 1.21+** installed (the engine is written in Go)
+- Understanding of the game rules described above
+
+In most cases, you do not need to build the engine manually. The test scripts automatically build the engine binary before running a match (see Testing). If you still want to build it yourself, run: `go build -o bin/snakegame main.go`. On Windows, this creates `bin/snakegame.exe`. On Linux/Mac, it creates `bin/snakegame`.
 
 #### Input (Game State)
 
@@ -166,8 +181,8 @@ Valid moves: `"UP"`, `"DOWN"`, `"LEFT"`, `"RIGHT"`
 - **Origin** (0, 0) is at **top-left**
 - **X increases** going **RIGHT**
 - **Y increases** going **DOWN**
-
-**Timeout behavior:** If your bot doesn't respond in time, it continues in current direction.
+- Your bot must respond in 500ms.If your bot doesn't respond in 500ms, it continues in current direction.
+- The zipped folder you submit must not be larger than 10 MB.
 
 ## Creating Your Bot
 
@@ -180,15 +195,16 @@ To participate in the competition, follow these steps:
 3. **Update** the `name` field in `config.json` to your team name
 4. **Implement** your bot strategy by modifying `bot.py` (Python 3.12)
 5. **Add dependencies** to `requirements.txt` if you need external packages (e.g., `numpy`, `scipy`)
-6. **Set up Docker** for your bot (If you donot have docker installed, see Docker Setup below):
+6. **Set up Docker** for your bot (If you donot have docker installed, see Docker Setup in Apendix):
    - Windows: `.\scripts\create_dockerfile.ps1 -BotDir .\.bots\your_team_name`
    - Linux/Mac: `./scripts/create_dockerfile.sh ./bots/your_team_name`
 7. **Update** `config.json` with Docker settings (add `docker_image`, `docker_cpus`, `docker_memory` fields)
 8. **Test** your bot locally using the test scripts
 9. **Submit** by compressing your team folder into a `.zip` file and submitting it through the **Google Form**
 
-This approach gives you a working template to start from, so you can focus on strategy rather than setup! For details regarding setup, check out the apendix.
-
+This approach gives you a working template to start from, so you can focus on strategy rather than setup! Remember the following restricitions when developing:
+- Bot must respond in 500ms.
+- Size of bot folder must be less than 10MB.
 ---
 
 The following sections are mainly tricks and tips to help you develop your bot.
@@ -303,7 +319,7 @@ Submit your bot via **Google Form**:
    - `requirements.txt` - Python dependencies
    - (Optional) `README.md` - Strategy explanation
 2. **Compress** your team folder into a `.zip` file (e.g., `team_digis.zip`)
-3. **Submit** the zip file through the Google Form link provided by the organizers
+3. **Submit** the zip file (not more than 10MB) through the Google Form link which will be provided by us later.
 
 Example structure:
 

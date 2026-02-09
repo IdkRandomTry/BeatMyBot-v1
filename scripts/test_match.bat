@@ -6,13 +6,13 @@ REM Example: scripts\test_match.bat example_python random_bot maps/large.json
 
 REM Set default values if arguments not provided
 set BOT1=%~1
-if "%BOT1%"==" " set BOT1=example_python
+if "%BOT1%"=="" set BOT1=example_python
 
 set BOT2=%~2
-if "%BOT2%"==" " set BOT2=example_python
+if "%BOT2%"=="" set BOT2=example_python
 
 set MAP=%~3
-if "%MAP%"==" " set MAP=maps/large.json
+if "%MAP%"=="" set MAP=maps/large.json
 
 echo ========================================
 echo   Snake Game Engine - Quick Test
