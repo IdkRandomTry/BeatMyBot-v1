@@ -1,4 +1,7 @@
+❗Rule Update: You cannot access the internet. [Updated on 10.02.26 17:25]
+
 ❗Rule Update: Size limit of 10 MB for submission. [Updated on 09.02.26 14:54]
+
 
 ✅Bug fix: `test_match.bat` handles default values correctly now. [Updated on 09.02.26 14:54]
 
@@ -183,6 +186,7 @@ Valid moves: `"UP"`, `"DOWN"`, `"LEFT"`, `"RIGHT"`
 - **Y increases** going **DOWN**
 - Your bot must respond in 500ms.If your bot doesn't respond in 500ms, it continues in current direction.
 - The zipped folder you submit must not be larger than 10 MB.
+- You cannot access the internet or instantate more processes. 
 
 ## Creating Your Bot
 
