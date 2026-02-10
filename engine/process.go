@@ -261,6 +261,12 @@ func (bp *BotPlayer) GetMove(ctx context.Context, gameState *GameState, timeout 
 		return response
 	case <-ctx.Done():
 		bp.timeoutCount++
+		
+		// Drain any pending response to prevent desync
+		go func() {
+			<-moveChan // Discard late response
+		}()
+		
 		return MoveResponse{
 			Move:      bp.getDefaultMove(gameState),
 			Timeout:   true,
