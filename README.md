@@ -1,3 +1,5 @@
+❗Deadline Extended: Sprint 3 deadline at 12 noon. [Updated on 15.02.26 02:42]
+
 ❗Rule Update: You cannot access the internet. [Updated on 10.02.26 17:25]
 
 ❗Rule Update: Size limit of 10 MB for submission. [Updated on 09.02.26 14:54]
@@ -40,7 +42,7 @@ You can participate **individually** or in a **team of maximum 2 members**. Each
 - **09/02** - Start of Competition. The codebase and gamerules will be shared. There will be an orientation at night.
 - **11/02** - Sprint 1 submission! You can submit your code to us for testing against other bots. You will get back the replay files of your battles against other submissions by the next day. This will help you understand the meta of the game and you can try to deduce what others are developing.
 - **13/02** - Sprint 2 submission!
-- **15/02 (10 AM)** - Sprint 3 submission!
+- **15/02 (~~10 AM~~ 12 noon)** - Sprint 3 submission!
 - **15/02 (6 PM)** - Final submissions. Note: We require you to have submitted your bot to atleast one of the Sprints to count your final submission.
 - **15/02 (10 PM)** - We will gather to watch how the tournament plays out!
 
